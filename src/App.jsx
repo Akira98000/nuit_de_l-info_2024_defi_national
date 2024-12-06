@@ -353,9 +353,10 @@ export default function App() {
       }}>
         <h1 style={{ margin: 0 }}>Nuit de l'info 2024</h1>
         <nav>
-          <a href="#home" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>A propos</a>
-          <a href="#about" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Les défis</a>
-          <a href="#contact" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Crédits</a>
+          <a href="https://nuit-de-l-info-2024-defi-meteo.netlify.app" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Défi-Meteo</a>
+          <a href="https://nuit-de-l-info-2024-defi-cookie.vercel.app" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Défi-Cookie</a>
+          <a href="https://nuit-de-l-info-2024-defi-credits.vercel.app" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Défi-Crédit</a>
+          <a href="https://nuit-de-l-info-2024-defi-logolyreco.vercel.app" style={{ color: 'white', margin: '0 10px', textDecoration: 'none' }}>Défi-Lyreco</a>
         </nav>
       </header>
       {!showAbout && (
