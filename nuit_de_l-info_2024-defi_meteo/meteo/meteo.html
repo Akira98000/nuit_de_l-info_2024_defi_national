@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Meteogotchi</title>
+        <link rel="stylesheet" href="meteo.css" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons&weight=200"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <div class="title">
+                    <h1>Meteogotchi</h1>
+                    <span id="biot-id" class="localisation">Biot 06400</span>
+                </div>
+                <div class="toggle">
+                    <a href="#" id="credits-link">Credits</a>
+                    <a href="#" id="rules-link" class="rules"><b>Rules</b></a>
+                </div>
+            </header>
+            <main>
+                <div class="pet-info">
+                    <div class="pet-text-info">
+                        <h2 id="pet-name">Kitty</h2>
+                        <p>2 weeks old</p>
+                    </div>
+                    <pre id="pet-art"></pre>
+                    <!-- Chat ASCII ici -->
+                </div>
+                <div class="actions">
+                    <button onclick="performAction('sleep')">
+                        Have a sleep
+                    </button>
+                    <button onclick="performAction('comfy')">Get comfy</button>
+                    <button onclick="performAction('play')">
+                        Play with the hair dryer
+                    </button>
+                    <button onclick="performAction('heat')">
+                        Turn up the heater
+                    </button>
+                </div>
+            </main>
+            <footer>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="material-icons">hotel</span>
+                        <progress id="sleep" value="50" max="100"></progress>
+                        <span id="sleep-icon" class="material-icons"
+                            >remove</span
+                        >
+                    </div>
+                    <div class="stat">
+                        <span class="material-icons">mood</span>
+                        <progress id="mood" value="70" max="100"></progress>
+                        <span id="mood-icon" class="material-icons"
+                            >remove</span
+                        >
+                    </div>
+                    <div class="stat">
+                        <span class="material-icons">dry</span>
+                        <progress id="dryness" value="30" max="100"></progress>
+                        <span id="dryness-icon" class="material-icons"
+                            >remove</span
+                        >
+                    </div>
+                    <div class="stat">
+                        <span class="material-icons">thermostat</span>
+                        <progress
+                            id="temperature"
+                            value="45"
+                            max="100"
+                        ></progress>
+                        <span id="temperature-icon" class="material-icons"
+                            >remove</span
+                        >
+                    </div>
+                </div>
+                <div class="current-weather" id="current-weather">
+                    <span id="current-weather-icon" class="material-icons" style="margin-bottom: 20px">
+                        Sunny
+                    </span>
+                    <p>Min <span id="min-temp-5"></span>°C</p>
+                    <p>Max  <span id="max-temp-5"></span>°C</p>
+                    <div class="bonus-malus">
+                        <div class="current-weather-icons">
+                            <span id="current-bonus" class="material-icons" style="color: #55C974" >help_outline</span>
+                            <span id="current-malus" class="material-icons" style="color: #FF6B6B">help_outline </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="coming-next">
+                    <p>Coming Next</p>
+                </div>
+                <div class="forecast">
+                    <div class="hour" id="hour-1">
+                        <span
+                            id="condition-1"
+                            class="material-icons condition-icon material-symbols-outlined"
+                            >help_outline</span
+                        >
+                        <p>Min <span id="min-temp-1"></span>°C</p>
+                        <p>Max <span id="max-temp-1"></span>°C</p>
+                        <div class="bonus-malus">
+                            <span
+                                >
+                                <span id="bonus-1" class="material-icons" style="color: #55C974"
+                                    >help_outline</span
+                                ></span
+                            >
+                            <span
+                                >
+                                <span id="malus-1" class="material-icons" style="color: #FF6B6B"
+                                    >help_outline</span
+                                ></span
+                            >
+                        </div>
+                    </div>
+                    <div class="hour" id="hour-2">
+                        <span
+                            id="condition-2"
+                            class="material-icons condition-icon"
+                            >water_drop</span
+                        >
+                        <p>Min <span id="min-temp-2"></span>°C</p>
+                        <p>Max <span id="max-temp-2"></span>°C</p>
+                        <div class="bonus-malus">
+                            <span
+                                >
+                                <span id="bonus-2" class="material-icons" style="color: #55C974"
+                                    >help_outline</span
+                                ></span
+                            >
+                            <span
+                                >
+                                <span id="malus-2" class="material-icons" style="color: #FF6B6B"
+                                    >help_outline</span
+                                ></span
+                            >
+                        </div>
+                    </div>
+                    <div class="hour" id="hour-3">
+                        <span
+                            id="condition-3"
+                            class="material-icons condition-icon"
+                            >help_outline</span
+                        >
+                        <p>Min <span id="min-temp-3"></span>°C</p>
+                        <p>Max <span id="max-temp-3"></span>°C</p>
+                        <div class="bonus-malus">
+                            <span
+                                >
+                                <span id="bonus-3" class="material-icons" style="color: #55C974"
+                                    >help_outline</span
+                                ></span
+                            >
+                            <span
+                                >
+                                <span id="malus-3" class="material-icons" style="color: #FF6B6B"
+                                    >help_outline</span
+                                ></span
+                            >
+                        </div>
+                    </div>
+                    <div class="hour" id="hour-4">
+                        <span
+                            id="condition-4"
+                            class="material-icons condition-icon"
+                            >help_outline</span
+                        >
+                        <p>Min <span id="min-temp-4"></span>°C</p>
+                        <p>Max <span id="max-temp-4"></span>°C</p>
+                        <div class="bonus-malus">
+                            <span>
+                                <span id="bonus-4" class="material-icons" style="color: #55C974"
+                                    >help_outline</span
+                                ></span
+                            >
+                            <span>
+                                <span id="malus-4" class="material-icons" style="color: #FF6B6B"
+                                    >help_outline</span
+                                ></span
+                            >
+                        </div>
+                    </div>
+                    <div class="hour" id="hour-5">
+                        <span
+                            id="condition-5"
+                            class="material-icons condition-icon"
+                            >help_outline</span
+                        >
+                        <p>Min <span id="min-temp-5"></span>°C</p>
+                        <p>Max  <span id="max-temp-5"></span>°C</p>
+                        <div class="bonus-malus">
+                                <span
+                                    id="bonus-5"
+                                    class="material-icons"
+                                    style="color: #55C974"
+                                    >help_outline</span
+                                ></span
+                            >
+                            <span>
+                                <span id="malus-5" class="material-icons" style="color: #FF6B6B"
+                                    >help_outline</span
+                                ></span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="meteo.js"></script>
+    </body>
+</html>

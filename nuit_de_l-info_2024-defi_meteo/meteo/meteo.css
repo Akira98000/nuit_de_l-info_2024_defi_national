@@ -1,0 +1,300 @@
+/* Define CSS variables for light and dark themes */
+:root {
+    --background-color: #f8faff;
+    --text-color: #181818;
+    --secondary-color: #edf2f9;
+    --progress-border-color: #181818;
+    --negative-color: #ff6b6b;
+    --positive-color: #55c974;
+}
+
+body.dark-theme {
+    --background-color: #181818;
+    --text-color: #f8faff;
+    --secondary-color: #242424;
+    --progress-border-color: #f8faff;
+    --negative-color: #dc5858;
+    --positive-color: #55c974;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.inter-title {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.inter-body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.rules {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+#app {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    flex: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.localisation {
+    display: flex;
+    gap: 10px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.toggle {
+    display: flex;
+    gap: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+
+    margin-top: 10%;
+}
+
+.pet-info {
+    text-align: center;
+    margin-bottom: 0; /* Pushes the pet-info higher */
+}
+
+.pet-text-info {
+    margin-bottom: 20px;
+}
+
+#pet-art {
+    font-size: 14px;
+    line-height: 1.2;
+    margin: 20px 0;
+    white-space: pre;
+    animation: bounce 0.5s infinite;
+}
+
+.actions {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Animation for bouncing */
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+button {
+    height: 50px;
+    padding: 0 40px;
+    border: 0;
+    border-radius: 5px;
+    background: #d8efff99;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--secondary-color);
+
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 5%;
+
+    width: 95vw;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-right: 10vw;
+}
+
+.stat span {
+    font-size: 20px;
+}
+
+progress[value] {
+    --color: blue; /* the progress color */
+    --background: lightgrey; /* the background color */
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: #181818 1 solid;
+    width: 150px;
+    margin: 0 10px;
+    border-radius: 5px;
+    background: 0;
+}
+
+progress[value]::-webkit-progress-bar {
+    border-radius: 5px;
+    background: 0;
+}
+progress[value]::-webkit-progress-value {
+    border-radius: 5px;
+    background: #181818;
+}
+progress[value]::-moz-progress-bar {
+    border-radius: 5px;
+    background: var(--color);
+}
+
+.current-weather {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
+    background-color: #d8efff99;
+    padding: 10px;
+    border-radius: 10px;
+
+    height: 110px;
+    width: 100px;
+}
+
+.current-weather-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+.coming-next {
+    text-align: center;
+    flex: 1;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.forecast {
+    display: flex;
+    gap: 50px;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
+    max-height: 130px;
+}
+
+.hour {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #d8efff99;
+    padding: 10px;
+    border-radius: 10px;
+
+    width: 100px;
+}
+
+.condition-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.bonus-malus {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    margin-top: 30px;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+span {
+    width: fit-content;
+    height: fit-content;
+}
+
+a {
+    color: #181818;
+    text-decoration: none;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
